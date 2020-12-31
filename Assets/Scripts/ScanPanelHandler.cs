@@ -82,6 +82,8 @@ public class ScanPanelHandler : MonoBehaviour
             colorBlock.pressedColor = BlueColor2;
             colorBlock.selectedColor = BlueColor;
             ScanButtonText.text = "주변 BLE 기기 탐색 시작";
+            RectTransform view = ScrollView.gameObject.GetComponent<RectTransform>();
+            view.sizeDelta = new Vector2(800f, 0f);
             BluetoothLEHardwareInterface.StopScan();
         }
         colorBlock.colorMultiplier = 1;

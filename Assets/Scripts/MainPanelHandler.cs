@@ -122,6 +122,7 @@ public class MainPanelHandler : MonoBehaviour
         for(int i = 0; i < length; i++)
             Destroy(HistoryList[i]);
         HistoryList.Clear();
+        HistoryRect.sizeDelta = new Vector2(990f, 0f);
     }
 
     public void ClearRealtimeLog() {
@@ -129,6 +130,7 @@ public class MainPanelHandler : MonoBehaviour
         for (int i = 0; i < length; i++)
             Destroy(RealtimeList[i]);
         RealtimeList.Clear();
+        HistoryRect.sizeDelta = new Vector2(990f, 0f);
     }
 
     public void Connect() {
