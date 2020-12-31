@@ -53,9 +53,9 @@ public class ProtocolHandler : MonoBehaviour
             case 0x24:
                 string stamp = GetCurrentTimeStamp();
                 switch(bytes[6]) {
-                    case 1: Main.AddRealtimeLog(MainPanelHandler.LOG_TYPE.POO,stamp); break;
-                    case 2: Main.AddRealtimeLog(MainPanelHandler.LOG_TYPE.WATER,stamp); break;
-                    case 3: Main.AddRealtimeLog(MainPanelHandler.LOG_TYPE.PEE,stamp); break;
+                    case 3: Main.AddRealtimeLog(MainPanelHandler.LOG_TYPE.POO,stamp); break;
+                    case 1: Main.AddRealtimeLog(MainPanelHandler.LOG_TYPE.WATER,stamp); break;
+                    case 2: Main.AddRealtimeLog(MainPanelHandler.LOG_TYPE.PEE,stamp); break;
                 }
                 break;
 
@@ -71,9 +71,9 @@ public class ProtocolHandler : MonoBehaviour
                         for (int i = 0; i < length; i++) {
                             string historyStamp = MakeTimeStamp(bytes[2 + 5 * i], bytes[3 + 5 * i], bytes[4 + 5 * i], bytes[5 + 5 * i]);
                             switch (bytes[6 + 5 * i]) {
-                                case 1: Main.AddHistoryLog(MainPanelHandler.LOG_TYPE.POO, historyStamp); break;
-                                case 2: Main.AddHistoryLog(MainPanelHandler.LOG_TYPE.WATER, historyStamp); break;
-                                case 3: Main.AddHistoryLog(MainPanelHandler.LOG_TYPE.PEE, historyStamp); break;
+                                case 3: Main.AddHistoryLog(MainPanelHandler.LOG_TYPE.POO, historyStamp); break;
+                                case 1: Main.AddHistoryLog(MainPanelHandler.LOG_TYPE.WATER, historyStamp); break;
+                                case 2: Main.AddHistoryLog(MainPanelHandler.LOG_TYPE.PEE, historyStamp); break;
                             }
                         }
                     } catch (System.Exception e) {
