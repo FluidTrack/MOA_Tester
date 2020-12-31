@@ -55,7 +55,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TimeStamp: {fileID: 1152583721048324108}
-  IndexText: {fileID: 0}
+  IndexText: {fileID: 2932932281621918314}
 --- !u!222 &1152583720835840181
 CanvasRenderer:
   m_ObjectHideFlags: 0
