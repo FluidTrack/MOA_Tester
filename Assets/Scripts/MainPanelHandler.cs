@@ -75,6 +75,7 @@ public class MainPanelHandler : MonoBehaviour
     }
 
     public void BatteryButtonClick() {
+        if (isPanelOpened) return;
         BluetoothManager.GetInstance().QueryBattery();
     }
 
@@ -95,7 +96,7 @@ public class MainPanelHandler : MonoBehaviour
         int index = HistoryList.Count;
         target.GetComponent<LogHandler>().Init(index-1, timeStamp);
 
-        HistoryRect.sizeDelta = new Vector2(990f, 80f * ( index));
+        HistoryRect.sizeDelta = new Vector2(1200f, 80f * ( index));
         HistoryScroll.verticalNormalizedPosition = 0f;
 
     }
@@ -113,7 +114,7 @@ public class MainPanelHandler : MonoBehaviour
         int index = RealtimeList.Count;
         target.GetComponent<LogHandler>().Init(index-1, timeStamp);
 
-        RealtimeRect.sizeDelta = new Vector2(990f, 80f * ( index));
+        RealtimeRect.sizeDelta = new Vector2(1200f, 80f * ( index));
         RealtimeScroll.verticalNormalizedPosition = 0f;
     }
 
@@ -122,7 +123,7 @@ public class MainPanelHandler : MonoBehaviour
         for(int i = 0; i < length; i++)
             Destroy(HistoryList[i]);
         HistoryList.Clear();
-        HistoryRect.sizeDelta = new Vector2(990f, 0f);
+        HistoryRect.sizeDelta = new Vector2(1200f, 0f);
     }
 
     public void ClearRealtimeLog() {
@@ -130,7 +131,7 @@ public class MainPanelHandler : MonoBehaviour
         for (int i = 0; i < length; i++)
             Destroy(RealtimeList[i]);
         RealtimeList.Clear();
-        HistoryRect.sizeDelta = new Vector2(990f, 0f);
+        HistoryRect.sizeDelta = new Vector2(1200f, 0f);
     }
 
     public void Connect() {
