@@ -145,7 +145,7 @@ public class ProtocolHandler : MonoBehaviour
         return MakeTimeStamp(now.Year, ( now.Month ),
             day_int, hour_int, min_int, sec_int);
     }
-    
+
     public string MakeTimeStamp(int day, int hour, int min, int sec) {
         DateTime now = DateTime.Now;
         return MakeTimeStamp(now.Year, ( now.Month ), day, hour, min, sec);
@@ -154,4 +154,45 @@ public class ProtocolHandler : MonoBehaviour
     public string MakeTimeStamp(int year,int month,int day, int hour, int min, int sec) {
         return year + "-" + month + "-" + day + " " + hour + ":" + min + ":" + sec;
     }
+
+
+    /* 김동현 편집 부분 시작 */
+
+    static public byte[] GetHistory() {
+      byte[] bytes = new byte[2];
+      byte[0] = 0x27;
+      byte[1] = 0;
+      return bytes;
+    }
+
+    static public byte[] GetLEDOn(string color) {
+        byte[] bytes = new byte[3];
+        bytes[0] = 0x44;
+        bytes[1] = 1
+        switch (color) {
+          case "Red":
+            bytes[2] = 1;
+            break;
+
+          case "Green":
+            bytes[2] = 2;
+            break;
+
+          case "Blue":
+            bytes[2] = 3;
+            break;
+        }
+        return bytes;
+    }
+
+    static public byte[] GetVibrateOn() {
+      byte[] bytes = new byte[2];
+      bytes[0] = 0x45;
+      bytes[1] = 0;
+      return bytes;
+    }
+
+    /* 김동현 편집 부분 끝 */
+
+
 }
