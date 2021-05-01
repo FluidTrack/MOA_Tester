@@ -165,23 +165,27 @@ public class ProtocolHandler : MonoBehaviour
       return bytes;
     }
 
-    static public byte[] GetLEDOn(string color) {
+    static public byte[] GetRedLEDOn() {
         byte[] bytes = new byte[3];
         bytes[0] = 0x44;
         bytes[1] = 1;
-        switch (color) {
-          case "Red":
-            bytes[2] = 1;
-            break;
+        bytes[2] = 1;
+        return bytes;
+    }
 
-          case "Green":
-            bytes[2] = 2;
-            break;
+    static public byte[] GetGreenLEDOn() {
+        byte[] bytes = new byte[3];
+        bytes[0] = 0x44;
+        bytes[1] = 1;
+        bytes[2] = 2;
+        return bytes;
+    }
 
-          case "Blue":
-            bytes[2] = 3;
-            break;
-        }
+    static public byte[] GetBlueLEDOn() {
+        byte[] bytes = new byte[3];
+        bytes[0] = 0x44;
+        bytes[1] = 1;
+        bytes[2] = 3;
         return bytes;
     }
 

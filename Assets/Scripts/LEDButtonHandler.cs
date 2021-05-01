@@ -6,11 +6,23 @@ using System;
 
 public class LEDButtonHandler : MonoBehaviour
 {
-    public string color;
 
-    public void OnClicked() {
+    public void OnRedClicked() {
       if (BluetoothManager.GetInstance()._connected) {
-        BluetoothManager.GetInstance().SetLED(color);
+        BluetoothManager.GetInstance().SetRedLED();
       }
     }
+
+    public void OnGreenClicked() {
+      if (BluetoothManager.GetInstance()._connected) {
+        BluetoothManager.GetInstance().SetGreenLED();
+      }
+    }
+
+    public void OnBlueClicked() {
+      if (BluetoothManager.GetInstance()._connected) {
+        BluetoothManager.GetInstance().SetBlueLED();
+      }
+    }
+
 }

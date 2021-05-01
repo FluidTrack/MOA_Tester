@@ -849,7 +849,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.00000080315976}
+  m_AnchoredPosition: {x: 0, y: 0.000021644479}
   m_SizeDelta: {x: 1200, y: 400}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &179909282
@@ -7867,7 +7867,6 @@ GameObject:
   - component: {fileID: 1094710777}
   - component: {fileID: 1094710776}
   - component: {fileID: 1094710775}
-  - component: {fileID: 1094710774}
   m_Layer: 5
   m_Name: GreenLightBtn
   m_TagString: Untagged
@@ -7895,19 +7894,6 @@ RectTransform:
   m_AnchoredPosition: {x: 248, y: -467}
   m_SizeDelta: {x: 150, y: 160}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1094710774
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1094710772}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f0a97173f8045460689a73bab1e12874, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  color: Green
 --- !u!114 &1094710775
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7951,8 +7937,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1094710774}
-        m_MethodName: OnClicked
+      - m_Target: {fileID: 1912596315}
+        m_MethodName: OnGreenClicked
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9696,7 +9682,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.0000008032211}
+  m_AnchoredPosition: {x: 0, y: 0.000021644479}
   m_SizeDelta: {x: 1200, y: 400}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &1492162536
@@ -10952,7 +10938,6 @@ GameObject:
   - component: {fileID: 1629194163}
   - component: {fileID: 1629194162}
   - component: {fileID: 1629194161}
-  - component: {fileID: 1629194160}
   m_Layer: 5
   m_Name: VibrateBtn
   m_TagString: Untagged
@@ -10980,18 +10965,6 @@ RectTransform:
   m_AnchoredPosition: {x: 598, y: -467}
   m_SizeDelta: {x: 150, y: 160}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1629194160
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1629194158}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ab7ebb37b76cc4a3187c9fdf669dc162, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1629194161
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11035,7 +11008,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1629194160}
+      - m_Target: {fileID: 1912596314}
         m_MethodName: OnClicked
         m_Mode: 1
         m_Arguments:
@@ -11343,7 +11316,6 @@ GameObject:
   - component: {fileID: 1691921377}
   - component: {fileID: 1691921376}
   - component: {fileID: 1691921375}
-  - component: {fileID: 1691921374}
   m_Layer: 5
   m_Name: RedLightBtn
   m_TagString: Untagged
@@ -11371,19 +11343,6 @@ RectTransform:
   m_AnchoredPosition: {x: 73, y: -467}
   m_SizeDelta: {x: 150, y: 160}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1691921374
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1691921372}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f0a97173f8045460689a73bab1e12874, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  color: Red
 --- !u!114 &1691921375
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11427,8 +11386,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1691921374}
-        m_MethodName: OnClicked
+      - m_Target: {fileID: 1912596315}
+        m_MethodName: OnRedClicked
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -13196,7 +13155,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0a97173f8045460689a73bab1e12874, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  color: 
 --- !u!1 &1919637213
 GameObject:
   m_ObjectHideFlags: 0
@@ -13921,7 +13879,6 @@ GameObject:
   - component: {fileID: 2056763117}
   - component: {fileID: 2056763116}
   - component: {fileID: 2056763115}
-  - component: {fileID: 2056763114}
   m_Layer: 5
   m_Name: BlueLigthBtn
   m_TagString: Untagged
@@ -13949,19 +13906,6 @@ RectTransform:
   m_AnchoredPosition: {x: 423, y: -467}
   m_SizeDelta: {x: 150, y: 160}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &2056763114
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2056763112}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f0a97173f8045460689a73bab1e12874, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  color: Blue
 --- !u!114 &2056763115
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14005,8 +13949,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2056763114}
-        m_MethodName: OnClicked
+      - m_Target: {fileID: 1912596315}
+        m_MethodName: OnBlueClicked
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

@@ -258,8 +258,18 @@ public class BluetoothManager : MonoBehaviour
     SendBytes(data);
   }
 
-  public void SetLED(string color) {
-    var data = ProtocolHandler.GetLEDOn(color);
+  public void SetRedLED() {
+    var data = ProtocolHandler.GetRedLEDOn();
+    SendBytes(data);
+  }
+
+  public void SetGreenLED() {
+    var data = ProtocolHandler.GetGreenLEDOn();
+    SendBytes(data);
+  }
+
+  public void SetBlueLED() {
+    var data = ProtocolHandler.GetBlueLEDOn();
     SendBytes(data);
   }
 
@@ -269,9 +279,6 @@ public class BluetoothManager : MonoBehaviour
   }
 
   IEnumerator ConnectAndQuery() {
-    while (!_connected) {
-      yield return 0;
-    }
     if (_connected) {
       yield return new WaitForSeconds(0.5f);
     }
