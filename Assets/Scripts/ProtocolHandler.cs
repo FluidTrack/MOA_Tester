@@ -160,15 +160,15 @@ public class ProtocolHandler : MonoBehaviour
 
     static public byte[] GetHistory() {
       byte[] bytes = new byte[2];
-      byte[0] = 0x27;
-      byte[1] = 0;
+      bytes[0] = 0x27;
+      bytes[1] = 0;
       return bytes;
     }
 
     static public byte[] GetLEDOn(string color) {
         byte[] bytes = new byte[3];
         bytes[0] = 0x44;
-        bytes[1] = 1
+        bytes[1] = 1;
         switch (color) {
           case "Red":
             bytes[2] = 1;

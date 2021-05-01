@@ -137,6 +137,14 @@ public class BluetoothManager : MonoBehaviour
 							if (IsEqual(characteristicUUID, ReceiveUUID)) {
 
 								_connected = true;
+
+
+                /* 김동현 편집 부분 시작 */
+
+                StartCoroutine(ConnectAndQuery());
+
+                /* 김동현 편집 부분 끝 */
+
 								SetState(States.Subscribe, 2f);
 								AlertHandler.GetInstance().Pop_Con();
 								MainPanelHandler.GetInstance().BlindControl(true);
@@ -243,10 +251,40 @@ public class BluetoothManager : MonoBehaviour
 		SendBytes(data);
 	}
 
+  /* 김동현 편집 부분 시작 */
+
+  public void QueryHistory() {
+    var data = ProtocolHandler.GetHistory();
+    SendBytes(data);
+  }
+
+  public void SetLED(string color) {
+    var data = ProtocolHandler.GetLEDOn(color);
+    SendBytes(data);
+  }
+
+  public void SetVibrate() {
+    var data = ProtocolHandler.GetVibrateOn();
+    SendBytes(data);
+  }
+
+  IEnumerator ConnectAndQuery() {
+    while (!_connected) {
+      yield return 0;
+    }
+    if (_connected) {
+      yield return new WaitForSeconds(0.5f);
+    }
+    QueryHistory();
+  }
+
+  /* 김동현 편집 부분 끝 */
+
+
 	void SendString(string value) {
 		var data = Encoding.UTF8.GetBytes(value);
 		// notice that the 6th parameter is false. this is because the TouchW32 doesn't support withResponse writing to its characteristic.
-		// some devices do support this setting and it is prefered when they do so that you can know for sure the data was received by 
+		// some devices do support this setting and it is prefered when they do so that you can know for sure the data was received by
 		// the device
 		BluetoothLEHardwareInterface.WriteCharacteristic(MacAddress, ServiceUUID, SendUUID, data, data.Length, false, (characteristicUUID) => {
 
@@ -257,7 +295,7 @@ public class BluetoothManager : MonoBehaviour
 	void SendByte(byte value) {
 		byte[] data = new byte[] { value };
 		// notice that the 6th parameter is false. this is because the TouchW32 doesn't support withResponse writing to its characteristic.
-		// some devices do support this setting and it is prefered when they do so that you can know for sure the data was received by 
+		// some devices do support this setting and it is prefered when they do so that you can know for sure the data was received by
 		// the device
 		BluetoothLEHardwareInterface.WriteCharacteristic(MacAddress, ServiceUUID, SendUUID, data, data.Length, false, (characteristicUUID) => {
 
@@ -271,7 +309,7 @@ public class BluetoothManager : MonoBehaviour
 			return;
         }
 		// notice that the 6th parameter is false. this is because the TouchW32 doesn't support withResponse writing to its characteristic.
-		// some devices do support this setting and it is prefered when they do so that you can know for sure the data was received by 
+		// some devices do support this setting and it is prefered when they do so that you can know for sure the data was received by
 		// the device
 		BluetoothLEHardwareInterface.WriteCharacteristic(MacAddress, ServiceUUID, SendUUID, data, data.Length, false, (characteristicUUID) => {
 
