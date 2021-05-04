@@ -81,6 +81,13 @@ public class MainPanelHandler : MonoBehaviour
 
     public void BlindControl(bool value) {
         Blind.SetActive(value);
+        if (value)
+            StartCoroutine(MaxWait());
+    }
+
+    IEnumerator MaxWait() {
+        yield return new WaitForSeconds(3f);
+        Blind.SetActive(false);
     }
 
     public void AddHistoryLog(LOG_TYPE type, string timeStamp) {

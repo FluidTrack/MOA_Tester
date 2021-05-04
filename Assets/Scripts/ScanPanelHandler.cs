@@ -39,6 +39,7 @@ public class ScanPanelHandler : MonoBehaviour
         Blind.SetActive(value);
     }
 
+
     public void OnCloseButton() {
         if (isLocked) return;
         MainPanel.isPanelOpened = false;

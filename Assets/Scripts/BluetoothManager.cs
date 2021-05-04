@@ -279,9 +279,7 @@ public class BluetoothManager : MonoBehaviour
   }
 
   IEnumerator ConnectAndQuery() {
-    if (_connected) {
-      yield return new WaitForSeconds(0.5f);
-    }
+    yield return new WaitForSeconds(3f);
     QueryHistory();
   }
 

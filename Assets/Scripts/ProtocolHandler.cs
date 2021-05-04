@@ -10,6 +10,7 @@ public class ProtocolHandler : MonoBehaviour
     public BluetoothManager BT;
     public MainPanelHandler Main;
     public Text DebugText;
+    public static string testString = "";
 
     public void ParsingBytes(byte[] bytes) {
         int length = bytes.Length;
@@ -66,7 +67,6 @@ public class ProtocolHandler : MonoBehaviour
                 if(bytes[1] == 0) {
                     MainPanelHandler.GetInstance().BlindControl(false);
                 } else {
-                    try {
                         int Length = ( bytes[1] ) / 5;
                         for (int i = 0; i < length; i++) {
                             string historyStamp = MakeTimeStamp(bytes[2 + 5 * i], bytes[3 + 5 * i], bytes[4 + 5 * i], bytes[5 + 5 * i]);
@@ -76,9 +76,6 @@ public class ProtocolHandler : MonoBehaviour
                                 case 2: Main.AddHistoryLog(MainPanelHandler.LOG_TYPE.PEE, historyStamp); break;
                             }
                         }
-                    } catch (System.Exception e) {
-                        e.ToString();
-                    }
                 }
                 break;
             default: break;
